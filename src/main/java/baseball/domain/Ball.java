@@ -26,7 +26,7 @@ public class Ball {
         this.number = number;
     }
 
-    /*public BallStatus compareBall(Ball ball) {
+    public BallStatus compareBall(Ball ball) {
         if(ball.position == this.position && ball.number == this.number) {
             return BallStatus.STRIKE;
         }
@@ -34,6 +34,5 @@ public class Ball {
             return BallStatus.BALL;
         }
         return BallStatus.NOTHING;
-    }*/
-
+    }
 }

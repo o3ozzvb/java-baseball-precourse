@@ -39,7 +39,7 @@ public class Player {
     public static void chkIsDigit(String inputNumbers) {
         final String REGEX = "[1-9]+";
         if(!inputNumbers.matches(REGEX)) {
-            throw new IllegalStateException(Message.EXP_BETWEEN_ONE_AND_NINE);
+            throw new IllegalArgumentException(Message.EXP_BETWEEN_ONE_AND_NINE);
         }
     }
 

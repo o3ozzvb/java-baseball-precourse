@@ -19,11 +19,11 @@ public class Balls {
 
     private void chkValidation(List<Integer> numbers) {
         if (chkNumCount(numbers)) {
-            throw new IllegalStateException(Message.EXP_NUM_LENGTH);
+            throw new IllegalArgumentException(Message.EXP_NUM_LENGTH);
         }
 
         if (chkDuplicate(numbers)) {
-            throw new IllegalStateException(Message.EXP_DUPLICATE);
+            throw new IllegalArgumentException(Message.EXP_DUPLICATE);
         }
     }
 

@@ -45,12 +45,16 @@ public class Balls {
     }
 
     public BallStatus compareBall(Ball ball) {
-        if(this.balls.stream()
-                .anyMatch(b -> b.getPosition() == ball.getPosition() && b.getNumber() == ball.getNumber())) {
+        List<BallStatus> compareList = new ArrayList<>();
+
+        for(Ball b : this.balls) {
+            compareList.add(b.compareBall(ball));
+        }
+
+        if(compareList.contains(BallStatus.STRIKE)) {
             return BallStatus.STRIKE;
         }
-        if(this.balls.stream()
-                .anyMatch(b -> b.getNumber() == ball.getNumber())) {
+        if(compareList.contains(BallStatus.BALL)) {
             return BallStatus.BALL;
         }
         return BallStatus.NOTHING;

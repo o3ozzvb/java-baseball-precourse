@@ -14,12 +14,12 @@ public class Balls {
     }
 
     private void chkValidation(List<Integer> numbers) {
-        if (chkDuplicate(numbers)) {
-            throw new IllegalStateException("중복이 존재하지 않아야 합니다.");
+        if (chkNumCount(numbers)) {
+            throw new IllegalStateException("3자리 숫자여야 합니다.");
         }
 
-        if(chkNumCount(numbers)) {
-            throw new IllegalStateException("3자리 숫자여야 합니다.");
+        if (chkDuplicate(numbers)) {
+            throw new IllegalStateException("중복이 존재하지 않아야 합니다.");
         }
     }
 
@@ -33,15 +33,11 @@ public class Balls {
 
     public boolean chkDuplicate(List<Integer> numbers) {
         Set<Integer> numberSet = new HashSet<>(numbers);
-        if(numberSet.size() == BALL_COUNT) return true;
-
-        return false;
+        return numberSet.size() != BALL_COUNT;
     }
 
     public boolean chkNumCount(List<Integer> numbers) {
-        if(numbers.size() == BALL_COUNT) return true;
-
-        return false;
+        return numbers.size() != BALL_COUNT;
     }
 
 }

@@ -31,9 +31,8 @@ public class Player {
     }
 
     public static void chkIsDigit(String inputNumbers) {
-        try {
-            Integer.parseInt(inputNumbers);
-        } catch (Exception e) {
+        final String REGEX = "[1-9]+";
+        if(!inputNumbers.matches(REGEX)) {
             throw new IllegalStateException("1~9 사이의 숫자를 입력해야 합니다");
         }
     }

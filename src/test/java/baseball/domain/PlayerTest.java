@@ -34,7 +34,7 @@ class PlayerTest {
 
     @DisplayName("입력한 숫자는 1~9 사이의 숫자여야 한다 ")
     @ParameterizedTest
-    @ValueSource(strings = {"test", "!@#", "st1", "a13", "tst"})
+    @ValueSource(strings = {"019", "!@#", "st1", "a13", "tst"})
     public void playerNum_Test3(String inputNumbers) {
         assertThatThrownBy(() -> Player.createPlayer(inputNumbers))
                 .isInstanceOf(IllegalStateException.class)
@@ -43,7 +43,7 @@ class PlayerTest {
 
     @DisplayName("입력한 숫자는 3자리이고, 중복이 없는 1~9 사이의 숫자이다 ")
     @ParameterizedTest
-    @ValueSource(strings = {"123", "125", "789", "146"})
+    @ValueSource(strings = {"123", "125", "789", "196"})
     public void playerNum_Test4(String inputNumbers) {
         assertDoesNotThrow(() -> Player.createPlayer(inputNumbers));
     }

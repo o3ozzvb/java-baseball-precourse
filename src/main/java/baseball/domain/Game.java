@@ -1,21 +1,12 @@
 package baseball.domain;
 
+import baseball.constant.Message;
+
 public class Game {
     int strike;
     int ball;
 
-    public int getStrike() {
-        return strike;
-    }
-
-    public int getBall() {
-        return ball;
-    }
-
     public void playGame(Balls computer, Balls player) {
-//        Balls computerBalls = computer.getBalls();
-//        Balls playerBalls = player.getBalls();
-
         for(Ball b : player.getBalls()) {
             getCompareResult(computer, b);
         }
@@ -28,5 +19,23 @@ public class Game {
         if(computerBalls.compareBall(b) == BallStatus.BALL) {
             this.ball++;
         }
+    }
+
+    public String getResult() {
+        String result = "";
+        if(this.strike > 0) {
+            result += strike + Message.STATUS_STRIKE;
+        }
+        if(this.ball > 0) {
+            result += ball + Message.STATUS_BALL;
+        }
+        if(this.strike == 0 && this.ball == 0) {
+            result = Message.STATUS_NOTHING;
+        }
+        return result;
+    }
+
+    public boolean isGameEnd() {
+        return this.strike == 3;
     }
 }

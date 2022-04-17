@@ -1,5 +1,6 @@
 package baseball.domain;
 
+import baseball.constant.Message;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -23,8 +24,7 @@ class GameTest {
 
         game.playGame(computer, player);
 
-        assertThat(game.getStrike()).isEqualTo(1);
-        assertThat(game.getBall()).isEqualTo(1);
+        assertThat(game.getResult()).isEqualTo("1스트라이크 1볼 ");
     }
 
     @Test
@@ -40,7 +40,6 @@ class GameTest {
 
         game.playGame(computer, player);
 
-        assertThat(game.getStrike()).isEqualTo(0);
-        assertThat(game.getBall()).isEqualTo(0);
+        assertThat(game.getResult()).isEqualTo(Message.STATUS_NOTHING);
     }
 }

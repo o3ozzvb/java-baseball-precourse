@@ -25,7 +25,7 @@ public class Balls {
 
     public List<Ball> createBalls(List<Integer> numbers) {
         List<Ball> ballList = new ArrayList<>();
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < BALL_COUNT; i++) {
             ballList.add(new Ball(i, numbers.get(i)));
         }
         return ballList;
@@ -39,5 +39,6 @@ public class Balls {
     public boolean chkNumCount(List<Integer> numbers) {
         return numbers.size() != BALL_COUNT;
     }
+
 
 }

@@ -1,5 +1,6 @@
 package baseball.domain;
 
+import baseball.constant.Message;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -19,7 +20,7 @@ class PlayerTest {
     @ValueSource(strings = {"1", "1234", "78"})
     public void playerNum_Test1(String inputNumbers) {
         assertThatThrownBy(() -> Player.createPlayer(inputNumbers))
-                .isInstanceOf(IllegalStateException.class)
+                .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("3자리 숫자여야 합니다.");
     }
 
@@ -28,7 +29,7 @@ class PlayerTest {
     @ValueSource(strings = {"122", "433", "788"})
     public void playerNum_Test2(String inputNumbers) {
         assertThatThrownBy(() -> Player.createPlayer(inputNumbers))
-                .isInstanceOf(IllegalStateException.class)
+                .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("중복이 존재하지 않아야 합니다.");
     }
 
@@ -37,8 +38,8 @@ class PlayerTest {
     @ValueSource(strings = {"019", "!@#", "st1", "a13", "tst"})
     public void playerNum_Test3(String inputNumbers) {
         assertThatThrownBy(() -> Player.createPlayer(inputNumbers))
-                .isInstanceOf(IllegalStateException.class)
-                .hasMessage("1~9 사이의 숫자를 입력해야 합니다");
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessage(Message.EXP_BETWEEN_ONE_AND_NINE);
     }
 
     @DisplayName("입력한 숫자는 3자리이고, 중복이 없는 1~9 사이의 숫자이다 ")

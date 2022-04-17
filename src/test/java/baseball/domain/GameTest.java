@@ -24,7 +24,7 @@ class GameTest {
 
         game.playGame(computer, player);
 
-        assertThat(game.getResult()).isEqualTo("1스트라이크 1볼 ");
+        assertThat(game.getResult()).isEqualTo("1볼 1스트라이크 ");
     }
 
     @Test

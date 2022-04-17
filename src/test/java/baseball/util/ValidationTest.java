@@ -14,7 +14,7 @@ class ValidationTest {
     @ValueSource(strings = {"10", "te"})
     public void continueInputValidationTest2(String input) {
         assertThatThrownBy(() -> Validation.chkIsOneOrTwo(input))
-                .isInstanceOf(IllegalStateException.class)
+                .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage(Message.EXP_ONE_OR_TWO);
     }
 

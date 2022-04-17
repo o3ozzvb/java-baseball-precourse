@@ -19,11 +19,11 @@
 * 사용자가 잘못된 값을 입력할 경우 IllegalArgumentException을 발생시킨 후 애플리케이션은 종료되어야 한다.
 
 ## 구현 기능 목록
-* Computer 3자리 난수 생성    ------- [O]
-* Player 3자리 숫자 입력받기  ------- [O]
+* Computer 3자리 난수 생성 ------- [O]
+* Player 3자리 숫자 입력받기 ------- [O]
     * 자리수 체크 (3자리)
     * 숫자인지 체크 (1~9)
     * 서로 다른 숫자인지 체크 
-* Computer, Player 비교
-    * Hint 출력
+* Computer, Player 비교 ------- [O]
+* Hint 출력
 * 게임 시작, 종료, 재시작

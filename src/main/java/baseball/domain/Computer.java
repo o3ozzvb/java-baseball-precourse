@@ -7,10 +7,13 @@ import static baseball.util.RandomNumberGenerator.generateNumbers;
 
 public class Computer {
 
-    Balls balls;
+    private Balls balls;
 
     public Computer() {
         this.balls = new Balls(generateNumbers());
     }
 
+    public Balls getBalls() {
+        return balls;
+    }
 }

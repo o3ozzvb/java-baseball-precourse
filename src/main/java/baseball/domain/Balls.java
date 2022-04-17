@@ -40,5 +40,4 @@ public class Balls {
         return numbers.size() != BALL_COUNT;
     }
 
-
 }

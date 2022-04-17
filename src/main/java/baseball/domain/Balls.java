@@ -13,6 +13,10 @@ public class Balls {
         this.balls = createBalls(numbers);
     }
 
+    public List<Ball> getBalls() {
+        return balls;
+    }
+
     private void chkValidation(List<Integer> numbers) {
         if (chkNumCount(numbers)) {
             throw new IllegalStateException("3자리 숫자여야 합니다.");
@@ -40,4 +44,15 @@ public class Balls {
         return numbers.size() != BALL_COUNT;
     }
 
+    public BallStatus compareBall(Ball ball) {
+        if(this.balls.stream()
+                .anyMatch(b -> b.getPosition() == ball.getPosition() && b.getNumber() == ball.getNumber())) {
+            return BallStatus.STRIKE;
+        }
+        if(this.balls.stream()
+                .anyMatch(b -> b.getNumber() == ball.getNumber())) {
+            return BallStatus.BALL;
+        }
+        return BallStatus.NOTHING;
+    }
 }

@@ -2,8 +2,8 @@ package baseball.domain;
 
 public class Ball {
 
-    int position;
-    int number;
+    private int position;
+    private int number;
 
     public Ball(int position, int number) {
         this.position = position;
@@ -25,4 +25,15 @@ public class Ball {
     public void setNumber(int number) {
         this.number = number;
     }
+
+    /*public BallStatus compareBall(Ball ball) {
+        if(ball.position == this.position && ball.number == this.number) {
+            return BallStatus.STRIKE;
+        }
+        if(ball.number == this.number) {
+            return BallStatus.BALL;
+        }
+        return BallStatus.NOTHING;
+    }*/
+
 }

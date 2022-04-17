@@ -5,11 +5,15 @@ import java.util.List;
 
 public class Player {
 
-    Balls balls;
+    private Balls balls;
 
     private Player(){
 
-    };
+    }
+
+    public Balls getBalls() {
+        return balls;
+    }
 
     public static Player createPlayer(String inputNumbers){
         Player player = new Player();
@@ -36,4 +40,5 @@ public class Player {
             throw new IllegalStateException("1~9 사이의 숫자를 입력해야 합니다");
         }
     }
+
 }

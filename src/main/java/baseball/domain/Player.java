@@ -1,5 +1,7 @@
 package baseball.domain;
 
+import baseball.constant.Message;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,7 +39,7 @@ public class Player {
     public static void chkIsDigit(String inputNumbers) {
         final String REGEX = "[1-9]+";
         if(!inputNumbers.matches(REGEX)) {
-            throw new IllegalStateException("1~9 사이의 숫자를 입력해야 합니다");
+            throw new IllegalStateException(Message.EXP_BETWEEN_ONE_AND_NINE);
         }
     }
 

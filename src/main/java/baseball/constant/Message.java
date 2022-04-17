@@ -13,6 +13,8 @@ public class Message {
      * Exception Message
      */
     public static final String EXP_BETWEEN_ONE_AND_NINE = "1~9 사이의 숫자를 입력해야 합니다.";
+    public static final String EXP_NUM_LENGTH = "3자리 숫자여야 합니다.";
+    public static final String EXP_DUPLICATE = "중복이 존재하지 않아야 합니다.";
     public static final String EXP_ONE_OR_TWO = "1 또는 2를 입력해주세요.";
 
     /**

@@ -1,6 +1,6 @@
 package baseball.domain;
 
-import baseball.util.RandomNumberGenerator;
+import baseball.constant.Message;
 
 import java.util.*;
 
@@ -19,11 +19,11 @@ public class Balls {
 
     private void chkValidation(List<Integer> numbers) {
         if (chkNumCount(numbers)) {
-            throw new IllegalStateException("3자리 숫자여야 합니다.");
+            throw new IllegalStateException(Message.EXP_NUM_LENGTH);
         }
 
         if (chkDuplicate(numbers)) {
-            throw new IllegalStateException("중복이 존재하지 않아야 합니다.");
+            throw new IllegalStateException(Message.EXP_DUPLICATE);
         }
     }
 

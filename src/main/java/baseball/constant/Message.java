@@ -7,7 +7,7 @@ public class Message {
      */
     public static final String STATUS_STRIKE = "스트라이크 ";
     public static final String STATUS_BALL = "볼 ";
-    public static final String STATUS_NOTHING = "낫씽";
+    public static final String STATUS_NOTHING = "낫싱";
 
     /**
      * Exception Message

@@ -23,11 +23,11 @@ public class Game {
 
     public String getResult() {
         String result = "";
-        if(this.strike > 0) {
-            result += strike + Message.STATUS_STRIKE;
-        }
         if(this.ball > 0) {
             result += ball + Message.STATUS_BALL;
+        }
+        if(this.strike > 0) {
+            result += strike + Message.STATUS_STRIKE;
         }
         if(this.strike == 0 && this.ball == 0) {
             result = Message.STATUS_NOTHING;
